@@ -1,0 +1,36 @@
+{
+  "name": "glenncord",
+  "description": "A framework extension of discord.js",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "keywords": [
+    "discordjs",
+    "framework"
+  ],
+  "author": "glenn.mt",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/callmeglenn/glenncord"
+  },
+  "scripts": {
+    "js": "node index.js",
+    "ts": "ts-node index.ts",
+    "lint": "eslint ./"
+  },
+  "dependencies": {
+    "discord.js": "^14.3.0",
+    "distube": "^4.0.3",
+    "mongoose": "^6.5.3"
+  },
+  "devDependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/voice": "^0.11.0",
+    "eslint": "^8.22.0",
+    "libsodium-wrappers": "^0.7.10",
+    "typescript": "^4.8.2"
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  }
+}
