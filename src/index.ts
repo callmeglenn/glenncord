@@ -5,8 +5,8 @@ import ClientCommand from './client/ClientCommand'
  * Examples can be found in the [npm page](https://npmjs.com/package/glenncord).
 */
 const Glenncord = {
-  Client,
-  ClientEvent,
-  ClientCommand
+	Client,
+	ClientEvent,
+	ClientCommand
 }
 export = Glenncord

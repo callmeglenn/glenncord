@@ -4,33 +4,33 @@ import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder, ChatInputComma
 import type { DisTubeEvents } from 'distube'
 
 export interface LoginCredentials {
-    token: string
-    mongo?: string
+	token: string
+	mongo?: string
 }
 export interface DirectorySettings {
-    commands?: string
-    events?: string
+	commands?: string
+	events?: string
 }
 export interface GlennOptions extends ClientOptions {
-    credentials: LoginCredentials
-    directories?: DirectorySettings
-    music?: boolean
-    typescript?: boolean
+	credentials: LoginCredentials
+	directories?: DirectorySettings
+	music?: boolean
+	typescript?: boolean
 }
 
 export interface On {
-    (client: Client, ...args: any[])
+	(client: Client, ...args: any[])
 }
 export interface Run {
-    (interaction: ChatInputCommandInteraction)
+	(interaction: ChatInputCommandInteraction)
 }
 export interface BaseEvent {
-    event: string | keyof DisTubeEvents
-    music?: boolean
-    on: On
+	event: string | keyof DisTubeEvents
+	music?: boolean
+	on: On
 }
 export interface BaseCommand {
-    data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder
-    cooldown?: number
-    run: Run
+	data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder
+	cooldown?: number
+	run: Run
 }

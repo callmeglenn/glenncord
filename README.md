@@ -21,15 +21,15 @@ const Glenncord = require('glenncord')
 const { GatewayIntentBits } = require('discord.js')
 
 const client = new Glenncord.Client({
-    intents: [GatewayIntentBits.Guilds],
-    credentials: {
-        token: "YOURTOKENHERE",
-        mongo: "YOURMONGOHERE"
-    },
-    directories: {
-        commands: "./commands",
-        events: "./events"
-    }
+	intents: [GatewayIntentBits.Guilds],
+	credentials: {
+		token: "YOURTOKENHERE",
+		mongo: "YOURMONGOHERE"
+	},
+	directories: {
+		commands: "./commands",
+		events: "./events"
+	}
 })
 client.start()
 ```
@@ -40,10 +40,10 @@ client.start()
 const Glenncord = require('glenncord')
 
 const event = new Glenncord.ClientEvent({
-    event: "ready",
-    on: function(client) {
-        console.log(`Logged in as ${client.user.tag}.`)
-    }
+	event: "ready",
+	on: function(client) {
+		console.log(`Logged in as ${client.user.tag}.`)
+	}
 })
 ```
 
@@ -54,11 +54,11 @@ const Glenncord = require('glenncord')
 const { SlashCommandBuilder } = require('discord.js')
 
 const command = new Glenncord.ClientCommand({
-    data: new SlashCommandBuilder()
-        .setName("ping")
-        .setDescription("Get the client's response time."),
-    run: function(interaction) {
-        interaction.reply(`${interaction.client.ws.ping}ms`)
-    }
+	data: new SlashCommandBuilder()
+		.setName("ping")
+		.setDescription("Get the client's response time."),
+	run: function(interaction) {
+		interaction.reply(`${interaction.client.ws.ping}ms`)
+	}
 })
 ```
