@@ -8,7 +8,6 @@ declare class Client extends Discord.Client {
     credentials: LoginCredentials;
     directories: DirectorySettings;
     distube: DisTube;
-    typescript?: boolean;
     constructor(extensions: GlennOptions);
     start(): Promise<void>;
     private connectToMongo;
