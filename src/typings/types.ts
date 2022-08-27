@@ -15,7 +15,6 @@ export interface GlennOptions extends ClientOptions {
 	credentials: LoginCredentials
 	directories?: DirectorySettings
 	music?: boolean
-	typescript?: boolean
 }
 
 export interface On {
