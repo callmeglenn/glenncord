@@ -4,4 +4,9 @@ import ClientCommand from './client/ClientCommand';
 /**
  * Examples can be found in the [npm page](https://npmjs.com/package/glenncord).
 */
-export { Client, ClientEvent, ClientCommand };
+declare const Glenncord: {
+    Client: typeof Client;
+    ClientEvent: typeof ClientEvent;
+    ClientCommand: typeof ClientCommand;
+};
+export = Glenncord;
