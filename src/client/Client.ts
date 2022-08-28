@@ -1,6 +1,6 @@
 import * as path from 'path'
 import * as Discord from 'discord.js'
-import * as mongoose from 'mongoose'
+import mongoose from 'mongoose'
 import DisTube from 'distube'
 import { promises as fs } from 'fs'
 import { LoginCredentials, DirectorySettings, GlennOptions } from '../typings/types'
