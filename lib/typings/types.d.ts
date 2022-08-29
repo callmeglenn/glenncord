@@ -19,7 +19,7 @@ export interface On {
     (client: Client, ...args: any[]): any;
 }
 export interface Run {
-    (interaction: ChatInputCommandInteraction<CacheType>): any;
+    (interaction: ChatInputCommandInteraction<CacheType | "cached" | "raw">): any;
 }
 export interface BaseEvent {
     event: string | keyof DisTubeEvents;
