@@ -1,4 +1,4 @@
-import type { CacheType, ClientOptions } from 'discord.js';
+import type { ClientOptions } from 'discord.js';
 import Client from '../client/Client';
 import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder, ChatInputCommandInteraction } from "discord.js";
 import type { DisTubeEvents } from 'distube';
@@ -19,7 +19,7 @@ export interface On {
     (client: Client, ...args: any[]): any;
 }
 export interface Run {
-    (interaction: ChatInputCommandInteraction<CacheType>): any;
+    (interaction: ChatInputCommandInteraction<"cached">): any;
 }
 export interface BaseEvent {
     event: string | keyof DisTubeEvents;

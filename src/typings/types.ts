@@ -21,7 +21,7 @@ export interface On {
 	(client: Client, ...args: any[])
 }
 export interface Run {
-	(interaction: ChatInputCommandInteraction<CacheType>)
+	(interaction: ChatInputCommandInteraction<"cached">)
 }
 export interface BaseEvent {
 	event: string | keyof DisTubeEvents
