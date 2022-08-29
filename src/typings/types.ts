@@ -1,4 +1,4 @@
-import type { ClientOptions } from 'discord.js'
+import type { CacheType, ClientOptions } from 'discord.js'
 import Client from '../client/Client'
 import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder, ChatInputCommandInteraction } from "discord.js"
 import type { DisTubeEvents } from 'distube'
@@ -21,7 +21,7 @@ export interface On {
 	(client: Client, ...args: any[])
 }
 export interface Run {
-	(interaction: ChatInputCommandInteraction)
+	(interaction: ChatInputCommandInteraction<CacheType>)
 }
 export interface BaseEvent {
 	event: string | keyof DisTubeEvents
@@ -31,5 +31,11 @@ export interface BaseEvent {
 export interface BaseCommand {
 	data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder
 	cooldown?: number
+	type?: ClientCommandType
 	run: Run
+}
+export enum ClientCommandType {
+	GUILD_ONLY = 0,
+	DM_ALLOWED = 1,
+	DM_ONLY = 2
 }
