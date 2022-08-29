@@ -6,7 +6,5 @@ declare class ClientCommand implements BaseCommand {
     cooldowns?: Collection<string, number>;
     run: Run;
     constructor(params: BaseCommand);
-    getCooldown(id: string): number;
-    setCooldown(id: string): void;
 }
 export default ClientCommand;
