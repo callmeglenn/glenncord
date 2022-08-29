@@ -16,12 +16,14 @@ export interface GlennOptions extends ClientOptions {
 	directories?: DirectorySettings
 	music?: boolean
 }
-
+export interface ClientCommandInteraction extends ChatInputCommandInteraction<"cached"> {
+	client: Client
+}
 export interface On {
 	(client: Client, ...args: any[])
 }
 export interface Run {
-	(interaction: ChatInputCommandInteraction<"cached">)
+	(interaction: ClientCommandInteraction)
 }
 export interface BaseEvent {
 	event: string | keyof DisTubeEvents

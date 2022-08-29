@@ -1,7 +1,7 @@
 {
   "name": "glenncord",
   "description": "A framework extension of discord.js",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "main": "lib/index.js",
   "keywords": [
     "discordjs",
