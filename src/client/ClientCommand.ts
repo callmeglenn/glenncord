@@ -11,12 +11,5 @@ class ClientCommand implements BaseCommand {
 		this.cooldowns = this.cooldown ? new Collection() : null
 		this.run = params.run
 	}
-	public getCooldown(id: string): number {
-		const timestamp = this.cooldowns.get(id)
-		return timestamp > Date.now() ? timestamp - Date.now() : null
-	}
-	public setCooldown(id: string): void {
-		this.cooldowns.set(id, Date.now() + this.cooldown)
-	}
 }
 export default ClientCommand;
