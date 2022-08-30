@@ -21,7 +21,9 @@ class Client extends Discord.Client {
 			this.distube = new DisTube(this, {
 				leaveOnStop: false,
 				leaveOnFinish: true,
-				emitNewSongOnly: true
+				emitNewSongOnly: true,
+				emitAddListWhenCreatingQueue: false,
+				emitAddSongWhenCreatingQueue: false
 			})
 		}
 	}
