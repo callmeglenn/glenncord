@@ -1,7 +1,7 @@
 import { BaseCommand, ClientCommandType, Run } from '../typings/types';
 import { Collection, SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder } from 'discord.js';
 declare class ClientCommand implements BaseCommand {
-    data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
+    data: Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup"> | SlashCommandSubcommandsOnlyBuilder;
     cooldown?: number;
     cooldowns?: Collection<string, number>;
     type: ClientCommandType;
