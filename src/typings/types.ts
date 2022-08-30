@@ -1,4 +1,4 @@
-import type { CacheType, ClientOptions } from 'discord.js'
+import type { ClientOptions } from 'discord.js'
 import Client from '../client/Client'
 import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder, ChatInputCommandInteraction } from "discord.js"
 import type { DisTubeEvents } from 'distube'
