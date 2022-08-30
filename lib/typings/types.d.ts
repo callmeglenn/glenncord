@@ -30,7 +30,7 @@ export interface BaseEvent {
     on: On;
 }
 export interface BaseCommand {
-    data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
+    data: Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup"> | SlashCommandSubcommandsOnlyBuilder;
     cooldown?: number;
     type?: ClientCommandType;
     run: Run;
