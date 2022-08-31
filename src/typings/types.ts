@@ -1,5 +1,5 @@
 import type { ClientOptions, Collection } from 'discord.js'
-import Client from '../client/Client'
+import Client from '../classes/Client'
 import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder, ChatInputCommandInteraction } from "discord.js"
 import type { DisTubeEvents } from 'distube'
 import { Document, Model } from 'mongoose'
