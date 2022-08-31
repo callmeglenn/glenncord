@@ -1,7 +1,8 @@
-import type { ClientOptions } from 'discord.js';
+import type { ClientOptions, Collection } from 'discord.js';
 import Client from '../client/Client';
 import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder, ChatInputCommandInteraction } from "discord.js";
 import type { DisTubeEvents } from 'distube';
+import { Document, Model } from 'mongoose';
 export interface LoginCredentials {
     token: string;
     mongo?: string;
@@ -32,11 +33,7 @@ export interface BaseEvent {
 export interface BaseCommand {
     data: Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup"> | SlashCommandSubcommandsOnlyBuilder;
     cooldown?: number;
-    type?: ClientCommandType;
     run: Run;
 }
-export declare enum ClientCommandType {
-    GUILD_ONLY = 0,
-    DM_ALLOWED = 1,
-    DM_ONLY = 2
-}
+export declare type MongoCache = Collection<string, Document>;
+export declare type MongoModel = Model<any> | Model<unknown, unknown, unknown, {}, any>;
