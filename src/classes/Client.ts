@@ -47,8 +47,8 @@ class Client extends Discord.Client {
 			if (stat.isDirectory()) this.registerCommandFiles(path.join(dir, file))
 			else if (file.endsWith('.ts') || file.endsWith('.js')) {
 				const data = await import(`${path.join(dir, file)}`)
-				const module = (data.default ? data.default : data) as ClientCommand
-				this.commands.set(module.data.name, module)
+				const module = data.default ? data.default : data
+				if (module instanceof ClientCommand) this.commands.set(module.data.name, module);
 			}
 		}
 	}
@@ -59,9 +59,11 @@ class Client extends Discord.Client {
 			if (stat.isDirectory()) this.registerEventFiles(path.join(dir, file))
 			else if (file.endsWith('.ts') || file.endsWith('.js')) {
 				const data = await import(`${path.join(dir, file)}`)
-				const module = (data.default ? data.default : data) as ClientEvent
-				if (!module.music) this.on(module.event as string, module.on.bind(null, this))
-				else this.distube.on(module.event as keyof DisTubeEvents, module.on.bind(null, this))
+				const module = data.default ? data.default : data
+				if (module instanceof ClientEvent) {
+					if (!module.music) this.on(module.event as string, module.on.bind(null, this))
+					else this.distube.on(module.event as keyof DisTubeEvents, module.on.bind(null, this))
+				}
 			}
 		}
 	}
