@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## Classes
 
-- **Client**: Files exported in directories specified in Client#directories will only be registered as commands/events if using **ClientCommand** or **ClientEvent**. ([defb3f6](https://github.com/callmeglenn/glenncord/commit/defb3f68e98d4be866f093010a7ded21fe66f539d))
+- **Client**: Files exported in directories specified in Client#directories will only be registered as commands/events if using **ClientCommand** or **ClientEvent**. ([defb3f6](https://github.com/callmeglenn/glenncord/commit/defb3f68e98d4be866f093010a7ded21fe66f539))
 
 # 1.3.0 - (2022-08-31)
 
