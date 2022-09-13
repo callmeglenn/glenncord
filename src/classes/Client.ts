@@ -18,9 +18,11 @@ class Client extends Discord.Client {
 		this.credentials = extensions.credentials
 		this.directories = extensions.directories
 
+		const spotify = new SpotifyPlugin({ api: extensions.credentials.spotify ?? null });
+
 		if (extensions.music) {
 			this.distube = new DisTube(this, {
-				plugins: [new SpotifyPlugin()],
+				plugins: [spotify],
 				leaveOnStop: false,
 				leaveOnFinish: true,
 				emitNewSongOnly: true,
