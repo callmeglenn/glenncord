@@ -7,22 +7,26 @@ import { LoginCredentials, DirectorySettings, GlennOptions } from '../typings/ty
 import type { DisTubeEvents } from 'distube'
 import ClientEvent from './ClientEvent'
 import ClientCommand from './ClientCommand'
-import { SpotifyPlugin } from '@distube/spotify'
+//import { SpotifyPlugin } from '@distube/spotify'
 class Client extends Discord.Client {
 	public commands: Discord.Collection<string, ClientCommand> = new Discord.Collection()
 	public credentials: LoginCredentials
 	public directories: DirectorySettings
 	public distube: DisTube
+	public test: string
 	constructor(public extensions: GlennOptions) {
 		super(extensions)
 		this.credentials = extensions.credentials
 		this.directories = extensions.directories
 
-		const spotify = new SpotifyPlugin({ api: extensions.credentials.spotify ?? null });
+		//const spotify = new SpotifyPlugin({ api: extensions.credentials.spotify ?? null });
 
 		if (extensions.music) {
+			import('@distube/spotify').then(({ SpotifyPlugin }) => {
+				this.test = "hello"
+			})
 			this.distube = new DisTube(this, {
-				plugins: [spotify],
+				//plugins: [spotify],
 				leaveOnStop: false,
 				leaveOnFinish: true,
 				emitNewSongOnly: true,
