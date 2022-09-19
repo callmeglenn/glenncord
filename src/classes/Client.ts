@@ -22,9 +22,8 @@ class Client extends Discord.Client {
 		//const spotify = new SpotifyPlugin({ api: extensions.credentials.spotify ?? null });
 
 		if (extensions.music) {
-			import('@distube/spotify').then(({ SpotifyPlugin }) => {
-				this.test = "hello"
-			})
+			const test = require("@distube/spotify");
+			console.log(test);
 			this.distube = new DisTube(this, {
 				//plugins: [spotify],
 				leaveOnStop: false,
