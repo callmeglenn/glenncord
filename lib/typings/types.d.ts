@@ -6,6 +6,10 @@ import { Document, Model } from 'mongoose';
 export interface LoginCredentials {
     token: string;
     mongo?: string;
+    spotify?: {
+        clientId: string;
+        clientSecret: string;
+    };
 }
 export interface DirectorySettings {
     commands?: string;

@@ -13,14 +13,14 @@ class Client extends Discord.Client {
 	public credentials: LoginCredentials
 	public directories: DirectorySettings
 	public distube: DisTube
+	public test: string
 	constructor(public extensions: GlennOptions) {
 		super(extensions)
 		this.credentials = extensions.credentials
 		this.directories = extensions.directories
 
-		const spotify = new SpotifyPlugin({ api: extensions.credentials.spotify ?? null });
-
 		if (extensions.music) {
+			const spotify = new SpotifyPlugin({ api: extensions.credentials.spotify ?? null });
 			this.distube = new DisTube(this, {
 				plugins: [spotify],
 				leaveOnStop: false,
